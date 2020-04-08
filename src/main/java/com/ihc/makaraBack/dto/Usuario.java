@@ -15,7 +15,7 @@ public class Usuario {
 
     @Id
     @GeneratedValue
-    private Integer id;
+    private Long id;
     private String nombre;
     private String apellido1;
     private String apellido2;
@@ -32,11 +32,11 @@ public class Usuario {
         this.titulacion_id = titulacion_id;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

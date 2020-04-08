@@ -19,7 +19,7 @@ public class UsuarioController {
     }
 
     @GetMapping(value = "/usuario")
-    public Usuario getById(Integer id){
+    public Usuario getById(Long id){
         return usuarioService.getById(id);
     }
 

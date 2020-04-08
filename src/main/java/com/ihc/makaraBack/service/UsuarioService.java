@@ -15,7 +15,7 @@ public class UsuarioService {
         return this.usuarioDAO.saveAndFlush(usuario);
     }
 
-    public Usuario getById(Integer id){
+    public Usuario getById(Long id){
         return usuarioDAO.findById(id).orElse(null);
     }
 }
