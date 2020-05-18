@@ -3,10 +3,7 @@ package com.ihc.makaraBack.controller;
 import com.ihc.makaraBack.dto.Usuario;
 import com.ihc.makaraBack.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class UsuarioController {
@@ -18,6 +15,7 @@ public class UsuarioController {
         this.usuarioService = usuarioService;
     }
 
+    @CrossOrigin
     @GetMapping(value = "/usuario")
     public Usuario getById(Long id){
         return usuarioService.getById(id);
