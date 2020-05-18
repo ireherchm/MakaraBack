@@ -5,6 +5,8 @@ import com.ihc.makaraBack.dto.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UsuarioService {
 
@@ -15,7 +17,15 @@ public class UsuarioService {
         return this.usuarioDAO.saveAndFlush(usuario);
     }
 
-    public Usuario getById(Long id){
+    public Usuario getUserById(Long id){
         return usuarioDAO.findById(id).orElse(null);
+    }
+
+    public List<Usuario> getAllUsers(){
+        return usuarioDAO.findAll();
+    }
+
+    public void deleteById(Long id){
+        usuarioDAO.deleteById(id);
     }
 }

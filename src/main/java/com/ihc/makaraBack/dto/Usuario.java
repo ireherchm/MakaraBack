@@ -8,7 +8,7 @@ import javax.persistence.Table;
 import java.util.Date;
 
 @Entity
-@Table(name="usuario")
+@Table(name = "usuario")
 public class Usuario {
 
     public static final long serialVersionUID = 4894729030347835498L;
@@ -22,7 +22,8 @@ public class Usuario {
     private Date fecha_nacimiento;
     private Integer titulacion_id;
 
-    public Usuario(){}
+    public Usuario() {
+    }
 
     public Usuario(String nombre, String apellido1, String apellido2, Date fecha_nacimiento, Integer titulacion_id) {
         this.nombre = nombre;

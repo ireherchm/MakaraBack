@@ -5,6 +5,8 @@ import com.ihc.makaraBack.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+@CrossOrigin
 @RestController
 public class UsuarioController {
 
@@ -15,13 +17,17 @@ public class UsuarioController {
         this.usuarioService = usuarioService;
     }
 
-    @CrossOrigin
-    @GetMapping(value = "/usuario")
-    public Usuario getById(Long id){
-        return usuarioService.getById(id);
+    @GetMapping(value = "/getUserById")
+    public Usuario getUserById(Long id){
+        return usuarioService.getUserById(id);
     }
 
-    @PostMapping(value="/usuario")
+    @GetMapping(value = "/getAllUsers")
+    public List<Usuario> getAllUsers(){
+        return usuarioService.getAllUsers();
+    }
+
+    @PostMapping(value="/saveUser")
     public Usuario updateOrSave(@RequestBody Usuario usuario){
         return usuarioService.save(usuario);
     }
